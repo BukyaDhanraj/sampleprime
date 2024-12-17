@@ -1,4 +1,4 @@
-public class PrimeNumber {
+public class prime {
     // Method to check if a number is prime
     public static boolean isPrime(int number) {
         if (number <= 1) {
