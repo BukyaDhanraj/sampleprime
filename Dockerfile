@@ -1,10 +1,14 @@
-# Use an official OpenJDK runtime as a parent image
+# Use OpenJDK 11 as the base image
 FROM openjdk:11-jdk-slim
-# Set the working directory inside the container
-WORKDIR /
-# Copy the current directory contents into the container at /app
-COPY prime.java .
+
+# Set the working directory to the current context
+WORKDIR .
+
+# Copy the current directory contents into the container
+COPY . .
+
 # Compile the Java program
 RUN javac prime.java
-# Command to run the program
-CMD ["java", "prime.java"]
+
+# Run the Java program
+CMD ["java", "prime"]
